@@ -1,0 +1,3 @@
+<div *ngFor="let row of entries; index as i" class="board-row" [style.cursor]="isActive ? 'pointer' : 'auto'">
+  <div *ngFor="let entry of row; index as j" class="square" (click)="!entry && markSquare(i, j)">{{entry}}</div>
+</div>

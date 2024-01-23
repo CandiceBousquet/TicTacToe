@@ -1,0 +1,14 @@
+<main class="main">
+  <mat-toolbar color="primary">Let's play {{ title }}!</mat-toolbar>
+  <div class="content">
+    <div class="left-side">
+    </div>
+    <div class="divider" role="separator" aria-label="Divider"></div>
+    <board [isActive]="!isGameOver$.getValue()" [currentPlayer]="currentPlayer" (updateGamePlay)="updateGamePlay($event)" />
+    <div class="row">
+      <button mat-raised-button (click)="clearBoard()">Start Over</button>
+    </div>
+  </div>
+</main>
+
+<router-outlet />
