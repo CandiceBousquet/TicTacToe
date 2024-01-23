@@ -1,4 +1,4 @@
-import {Entry, PlayerMark} from "../app/components/app.component";
+import {Entry, PlayerMark} from "../app/app.component";
 
 export const isWinningMove = (player: PlayerMark, board: Entry[][]): boolean => {
   let threeInARow = false;

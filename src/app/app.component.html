@@ -1,14 +1,16 @@
 <main class="main">
   <mat-toolbar color="primary">Let's play {{ title }}!</mat-toolbar>
   <div class="content">
-    <div class="left-side">
-    </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <board [isActive]="!isGameOver$.getValue()" [currentPlayer]="currentPlayer" (updateGamePlay)="updateGamePlay($event)" />
     <div class="row">
+      <board [isEnabled]="!isGameOver$.getValue()" [currentPlayer]="currentPlayer" (updateGamePlay)="updateGamePlay($event)" />
       <button mat-raised-button (click)="clearBoard()">Start Over</button>
+    </div>
+    <div class="row">
+      <p *ngIf="!isGameOver$.getValue()">
+        Player {{currentPlayer}}, it's your turn!
+      </p>
     </div>
   </div>
 </main>
-
-<router-outlet />
+<router-outlet></router-outlet>

@@ -1,5 +1,5 @@
 import {isWinningMove} from "./gameUtils";
-import {Entry, PlayerMark} from "../app/components/app.component";
+import {Entry, PlayerMark} from "../app/app.component";
 
 describe('isWinningMove', () => {
   let entries: Entry[][];

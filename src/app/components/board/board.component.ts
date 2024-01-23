@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from "@angular/core";
-import {Entry, PlayerMark} from "./app.component";
+import {Entry, PlayerMark} from "../../app.component";
 import {CommonModule} from "@angular/common";
 
 @Component({
@@ -11,12 +11,12 @@ import {CommonModule} from "@angular/common";
 })
 export class BoardComponent {
   @Input() entries: Entry[][] = [[null, null, null], [null, null, null], [null, null, null]];
-  @Input() isActive!: boolean;
+  @Input() isEnabled!: boolean;
   @Input() currentPlayer!: PlayerMark;
   @Output() updateGamePlay: EventEmitter<Entry[][]> = new EventEmitter<Entry[][]>;
 
   markSquare = (row: number, col: number) => {
-    if(this.isActive){
+    if(this.isEnabled){
       this.entries[row][col] = this.currentPlayer;
       this.updateGamePlay.next(this.entries);
     }

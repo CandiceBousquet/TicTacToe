@@ -6,8 +6,8 @@ import { MatToolbar } from '@angular/material/toolbar'
 import { MatButton } from '@angular/material/button'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { BehaviorSubject } from "rxjs";
-import { BoardComponent } from "./board.component";
-import { isWinningMove } from "../../utils/gameUtils";
+import { BoardComponent } from "./components/board/board.component";
+import { isWinningMove } from "../utils/gameUtils";
 
 export enum PlayerMark {
   X = 'X',
